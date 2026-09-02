@@ -1,0 +1,49 @@
+/* CSS for Home component */
+
+body {
+    font-family: 'Outfit';
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Outfit';
+}
+
+#text1 {
+    padding-top: 100px;
+}
+
+#text2 {
+    color: #E8631A;
+}
+
+p {
+    color: grey;
+}
+
+#arrow {
+    text-align: right;
+}
+
+button {
+    display: inline-flex; 
+    align-items: center;
+    justify-content: space-between; 
+    border-radius: 12px;
+    background-color: white;
+    padding-right: 30px;
+    padding-left: 20px;
+    color: rosybrown;
+    font-family: 'Outfit';
+    font-size: 15px;
+    font-weight: bold;
+    border-color: rosybrown;
+    height: 50px;
+    width: 400px;
+}
+
+
+button:hover {
+    background-color: #E8631A;
+    color: white;
+}
