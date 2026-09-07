@@ -1,0 +1,136 @@
+/* CSS for AddItems component */
+
+body {
+    font-family: 'Outfit';
+    text-align: left;
+    padding-left: 600px;
+    padding-top: 125px;
+}
+
+#prog {
+    color: #E8631A;
+    font-size: 2rem;
+}
+
+p {
+    color: grey;
+}
+
+#emptylist {
+    color: #cfc1b4;
+    padding-right: 400px;
+}
+
+input {
+    border-radius: 10px;
+    font-family: 'Outfit';
+    background-color: #F8F6F1;
+    accent-color: #E8631A;
+}
+
+label {
+    color: grey;
+}
+
+#formstyle {
+    padding-top: 2vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    max-width: 330px;
+    background-color: white;
+    border-radius: 12px;
+    height: 20vh;
+}
+
+#itemdisplay {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 12px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    max-width: 330px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    color: #E8631A;
+    border-color: #E8631A;
+    border-width: 0.5px;
+    background-color: white;
+    font-weight: bold;
+    width: 21vw;
+    height: 5vh;
+}
+
+::deep .text {
+    border: 1px solid #f0eae1;
+    border-radius: 12px;
+    border-color: #f0eae1;
+    font-family: 'Outfit';
+    background-color: #f0eae1;
+    color: #ab9e89;
+    height: 5vh;
+    outline: none;
+}
+
+::deep. text.valid {
+    border: none;
+    outline: none;
+}
+
+::deep .text.invalid {
+    border: 2px solid red;
+    outline: none;
+}
+
+::deep .text.modified:not(.invalid) {
+    border: none;
+}
+
+::deep .number {
+    border-radius: 12px;
+    border: 1px solid #f0eae1;
+    font-family: 'Outfit';
+    background-color: #f0eae1;
+    color: #ab9e89;
+    height: 5vh;
+    outline: none;
+}
+
+::deep .number.invalid {
+    border: 2px solid red;
+    outline: none;
+}
+
+#submit {
+    padding-top: 2vh;
+}
+
+input[type="SUBMIT"]:hover {
+    background-color: #E8631A;
+    color: white;
+}
+
+#name {
+    text-align: left;
+    font-weight: bold;
+    color: black;
+}
+
+#price {
+    text-align: right;
+    color: black;
+    margin-left: auto;
+}
+
+button {
+    background-color: white;
+    border: none;
+    padding-left: 30px;
+    color: grey;
+}
+
+button:hover {
+    color: dimgray;
+}

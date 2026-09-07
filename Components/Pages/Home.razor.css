@@ -10,7 +10,7 @@ h1 {
 }
 
 #text1 {
-    padding-top: 100px;
+    padding-top: 15vh;
 }
 
 #text2 {
@@ -31,11 +31,11 @@ button {
     justify-content: space-between; 
     border-radius: 12px;
     background-color: white;
-    padding-right: 30px;
-    padding-left: 20px;
+    padding-right: 5vw;
+    padding-left: 3vh;
     color: rosybrown;
     font-family: 'Outfit';
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: bold;
     border-color: rosybrown;
     height: 50px;
@@ -44,6 +44,7 @@ button {
 
 
 button:hover {
-    background-color: #E8631A;
-    color: white;
+   background-color: #E8631A;
+   color: white;
+   border-color: #E8631A;
 }

@@ -1,0 +1,67 @@
+﻿@page "/AddItems"
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+@using System.ComponentModel.DataAnnotations
+
+<body>
+@* <p id="prog">━ · ·</p> *@
+<h2>Add items</h2>
+<p>Enter each item from your receipt and its price.</p>
+
+@if (itemList.Count == 0)
+{
+    <p id="emptylist">Nothing yet - add your first item below</p>
+    } else
+    {
+        foreach (var item in itemList)
+        {
+            <div id="itemdisplay">
+            <p id="name">@item.ItemName</p>
+            <p id="price">£@item.Price</p>
+            <button @onclick="() => DeleteItem(item)">X</button>
+            </div>
+        }
+    }
+
+<EditForm FormName="additems" Model="@item" OnValidSubmit="@HandleSubmit">
+    <DataAnnotationsValidator/>
+    <div id="formstyle">
+    <InputText class="text" placeholder="Item name" size="20" @bind-Value="@item.ItemName"/>
+    <label for="price">£</label>
+    <InputNumber class="number" placeholder="0.00" size="6" @bind-Value="@item.Price"/>
+    <div id="submit">
+    <input type="submit" value="+ Add item">
+    </div>
+    </div>
+</EditForm>
+</body>
+
+@code {
+    List<FoodItem> itemList;
+    private FoodItem item;
+
+    protected override async Task OnInitializedAsync()
+    {
+        itemList = new();
+        item = new();
+    }
+
+    private void HandleSubmit()
+    {
+        var copy = new FoodItem { ItemName = item.ItemName, Price = item.Price };
+        itemList.Add(copy);
+    }
+
+    private void DeleteItem(FoodItem item)
+    {
+        itemList.Remove(item);
+    }
+
+    public class FoodItem
+    {
+        [Required]
+        public string ItemName { get; set; }
+        
+        public decimal Price { get; set; }
+    }
+
+}
