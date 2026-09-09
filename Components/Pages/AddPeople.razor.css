@@ -1,0 +1,109 @@
+/* CSS for AddPeople component */
+
+
+body {
+    font-family: 'Outfit';
+    text-align: left;
+    padding-left: 600px;
+    padding-top: 125px;
+}
+
+p {
+    color: grey;
+}
+
+#name {
+    font-weight: bold;
+    color: black;
+}
+
+#initial {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%; 
+    line-height: 36px;
+    text-align: center;
+    color: white;
+}
+
+#nameblock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    background-color: white;
+    border: none;
+    padding-left: 30px;
+    color: grey;
+}
+
+#formstyle {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 2vh;
+    padding-left: 1vw;
+    padding-right: 3vw;
+    max-width: calc(330px - 4vw);
+    background-color: white;
+    border-radius: 12px;
+    height: 8vh;
+    margin-bottom: 20px;
+}
+
+::deep .text {
+    padding-left: 15px;
+    border: 1px solid #f0eae1;
+    border-radius: 12px;
+    border-color: #f0eae1;
+    font-family: 'Outfit';
+    background-color: #f0eae1;
+    color: #ab9e89;
+    height: 5vh;
+    outline: none;
+}
+
+#namedisplay {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 12px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    max-width: calc(330px - 2vw);
+    margin-bottom: 10px;
+}
+
+#emptylist {
+    color: #cfc1b4;
+    padding-right: 400px;
+}
+
+input[type="submit"] {
+    color: #E8631A;
+    border-color: #E8631A;
+    border-width: 0.5px;
+    border-radius: 12px;
+    background-color: white;
+    font-weight: bold;
+    width: 4vw;
+    height: 5vh;
+}
+
+input[type="submit"]:hover {
+    background-color: #E8631A;
+    color: white;
+}
+
+#continue {
+    width: 330px;
+    padding: 0px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: 'Outfit';
+    height: 5vh;
+    border-radius: 12px;
+}

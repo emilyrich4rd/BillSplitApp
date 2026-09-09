@@ -33,11 +33,17 @@
     </div>
     </div>
 </EditForm>
+<div id="total">
+    <p>Total</p>
+    <h4>£@total</h4>
+</div>
+<a href="/AddPeople"><button id="continue">Continue to people</button></a>
 </body>
 
 @code {
     List<FoodItem> itemList;
     private FoodItem item;
+    private decimal total = 0;
 
     protected override async Task OnInitializedAsync()
     {
@@ -47,7 +53,9 @@
 
     private void HandleSubmit()
     {
-        var copy = new FoodItem { ItemName = item.ItemName, Price = item.Price };
+        var price = Math.Round(item.Price, 2);
+        total += price;
+        var copy = new FoodItem { ItemName = item.ItemName, Price = price };
         itemList.Add(copy);
     }
 

@@ -1,0 +1,71 @@
+﻿@page "/AddPeople"
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+@using System.ComponentModel.DataAnnotations
+
+<body>
+<h2>Who's splitting?</h2>
+<p>Add everyone at the table, up to 10 people.</p>
+
+@if (people.Count == 0)
+{
+    <p id="emptylist">No one yet - add the first person</p>
+    } else
+    {
+        @for (int i = 0; i < people.Count; i++)
+        {
+            <div id="namedisplay">
+            <div id="nameblock">
+            <div id="initial" style="background-color:@colourList[i]">@people[i].Name[0]</div>
+            <p id="name">@people[i].Name</p>
+            </div>
+            <button @onclick="() => DeletePerson(people[i])">X</button>
+            </div>
+        }
+    }
+
+@if (people.Count <= 9)
+{
+        <EditForm FormName="additems" Model="@person" OnValidSubmit="@HandleSubmit">
+        <DataAnnotationsValidator />
+        <div id="formstyle">
+        <InputText class="text" placeholder="Name" size="20" @bind-Value="@person.Name" />
+        <div id="submit">
+        <input type="submit" value="Add">
+        </div>
+        </div>
+        </EditForm>
+}
+    
+<a href=""><button id="continue">Split the bill →</button></a>
+</body>
+
+@code {
+    private Person person;
+    List<Person> people;
+
+    List<String> colourList;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        person = new();
+        people = new();
+        colourList = ["slateblue", "tomato", "mediumseagreen", "orange", "mediumvioletred", "darkgoldenrod", "dodgerblue", "darkcyan", "thistle", "palevioletred"];
+    }
+
+    private void HandleSubmit()
+    {
+        people.Add(new Person { Name = person.Name });
+  
+    }
+
+    private void DeletePerson(Person person)
+    {
+        people.Remove(person);
+    }
+
+    public class Person
+    {
+        [Required]
+        public string Name { get; set; }
+    }
+}

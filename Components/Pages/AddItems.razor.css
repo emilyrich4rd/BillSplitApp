@@ -134,3 +134,22 @@ button {
 button:hover {
     color: dimgray;
 }
+
+#total {
+    display: flex;
+    justify-content: space-between;
+    max-width: 330px;
+    align-items:center;
+    margin: 0;
+}
+
+#continue {
+    width: 360px;
+    padding: 0px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: 'Outfit';
+    height: 5vh;
+    border-radius: 12px;
+}
